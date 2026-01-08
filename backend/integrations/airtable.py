@@ -1,7 +1,13 @@
 # airtable.py
 
 import datetime
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 import json
+import base64
 import secrets
 from fastapi import Request, HTTPException
 from fastapi.responses import HTMLResponse
@@ -17,6 +23,10 @@ from redis_client import add_key_value_redis, get_value_redis, delete_key_redis
 
 # CLIENT_ID = 'XXX'
 # CLIENT_SECRET = 'XXX'
+
+CLIENT_ID = os.getenv("AIRTABLE_CLIENT_ID")
+CLIENT_SECRET = os.getenv("AIRTABLE_SECRET_ID")
+
 CLIENT_ID = '329147ef-ac8b-4863-bced-77b7b195258f'
 CLIENT_SECRET = 'e59aec7edddef2edf4388ef611b151ab5fc85c61f828df909c147085e8ffb4f1'
 REDIRECT_URI = 'http://localhost:8000/integrations/airtable/oauth2callback'
