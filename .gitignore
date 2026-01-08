@@ -11,6 +11,8 @@ env/
 # Node
 node_modules/
 
+*.pdf
+
 # OS
 .DS_Store
 Thumbs.db
